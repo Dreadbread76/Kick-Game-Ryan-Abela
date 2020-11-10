@@ -32,6 +32,7 @@ public class Ball : MonoBehaviour
 
         win = false;
         lose = false;
+        kicked = false;
         winScreen.SetActive(false);
         loseScreen.SetActive(false);
         
@@ -81,6 +82,7 @@ public class Ball : MonoBehaviour
         //Restart on R
         if (Input.GetKeyDown(KeyCode.R))
         {
+     
             Restart();
         }
 
@@ -115,7 +117,8 @@ public class Ball : MonoBehaviour
     //Reload scene
     void Restart()
     {
-
+      
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
